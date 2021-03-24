@@ -7,6 +7,6 @@ em autoit
 </p>
 
 <p align="center">
-  <img width="660" height="400" src="https://i.imgur.com/pLypjc8.png">
+  <img width="660" height="500" src="https://i.imgur.com/pLypjc8.png">
 </p>
 
