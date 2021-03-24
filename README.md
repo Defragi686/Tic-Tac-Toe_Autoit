@@ -1,7 +1,7 @@
 <p align="center">
-# Tic-Tac-Toe
+  <h1># Tic-Tac-Toe</h1>
 </p>
-<p align="center" style="font-size:20px">
+<p align="center" style="font-size:20px;">
 Um Simples jogo da velha Com interface grafica feito
 em autoit
 </p>
