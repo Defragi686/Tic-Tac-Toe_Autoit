@@ -6,4 +6,4 @@ em autoit
 
 
 
-![Velha](https://imgur.com/pLypjc8?auto=compress,format)
+![Velha](https://imgur.com/pLypjc8)
