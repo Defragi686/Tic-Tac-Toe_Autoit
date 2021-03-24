@@ -55,8 +55,8 @@ Func Inicio()
 			   MsgBox($MB_ICONWARNING, "Exit", "A Operaçao Foi Concluida",2)
 			   Exit
 			EndIf
+			$teste = 0
 			GUISetState(@SW_SHOW)
-
 	  EndSwitch
    WEnd
    Sleep(500)
@@ -114,9 +114,9 @@ While $jogando < 9
 			EndIf
 
 		 Case $GUI_EVENT_CLOSE
-			GUISetState(@SW_HIDE)
-			Local $teste = MsgBox($MB_ICONWARNING + $MB_YESNO, "?", "VOCE DESEJA SAIR?")
-			If $teste = 1 Or $teste = 6 Then
+			Local $teste = MsgBox(1, "?", "VOCE DESEJA SAIR?")
+			If $teste == 1 Then
+			   GUISetState(@SW_HIDE)
 			   MsgBox($MB_ICONWARNING, "Exit", "A Operaçao Foi Concluida",2)
 			   Exit
 			Else
@@ -130,9 +130,11 @@ While $jogando < 9
 	  GUICtrlSetBkColor($gui[4],0x00FF67)
 	  GUICtrlSetColor($gui[$i], 0xFFFFFF)
 	  GUICtrlSetData($gui[4], "Velha!")
-	  Sleep(10000)
-	  Exit
+	  Sleep(5000)
+	  anima()
+	  $jogando = 0
    EndIf
+
 WEnd
 
 Func Checar()
@@ -170,15 +172,15 @@ Func Checar()
 		 GUICtrlSetBkColor($gui[5], 0x3D534E)
 		 GUICtrlSetBkColor($gui[8], 0x3D534E)
 		 $vencedor = 1
-	  Case $msg[0] == "X" And $msg[4] == "X" And $msg[7] == "X"
-		 GUICtrlSetBkColor($gui[2], 0x3D534E)
-		 GUICtrlSetBkColor($gui[5], 0x3D534E)
+	  Case $msg[0] == "X" And $msg[4] == "X" And $msg[8] == "X"
+		 GUICtrlSetBkColor($gui[0], 0x3D534E)
+		 GUICtrlSetBkColor($gui[4], 0x3D534E)
 		 GUICtrlSetBkColor($gui[8], 0x3D534E)
 		 $vencedor = 1
 	  Case $msg[2] == "X" And $msg[4] == "X" And $msg[6] == "X"
 		 GUICtrlSetBkColor($gui[2], 0x3D534E)
-		 GUICtrlSetBkColor($gui[5], 0x3D534E)
-		 GUICtrlSetBkColor($gui[8], 0x3D534E)
+		 GUICtrlSetBkColor($gui[4], 0x3D534E)
+		 GUICtrlSetBkColor($gui[6], 0x3D534E)
 		 $vencedor = 1
 	  ;Bolinha
 	  ;Linhas
@@ -214,15 +216,15 @@ Func Checar()
 		 GUICtrlSetBkColor($gui[5], 0x3D534E)
 		 GUICtrlSetBkColor($gui[8], 0x3D534E)
 		 $vencedor = 2
-	  Case $msg[0] == "O" And $msg[4] == "O" And $msg[7] == "O"
-		 GUICtrlSetBkColor($gui[2], 0x3D534E)
-		 GUICtrlSetBkColor($gui[5], 0x3D534E)
+	  Case $msg[0] == "O" And $msg[4] == "O" And $msg[8] == "O"
+		 GUICtrlSetBkColor($gui[0], 0x3D534E)
+		 GUICtrlSetBkColor($gui[4], 0x3D534E)
 		 GUICtrlSetBkColor($gui[8], 0x3D534E)
 		 $vencedor = 1
 	  Case $msg[2] == "O" And $msg[4] == "O" And $msg[6] == "O"
 		 GUICtrlSetBkColor($gui[2], 0x3D534E)
-		 GUICtrlSetBkColor($gui[5], 0x3D534E)
-		 GUICtrlSetBkColor($gui[8], 0x3D534E)
+		 GUICtrlSetBkColor($gui[4], 0x3D534E)
+		 GUICtrlSetBkColor($gui[6], 0x3D534E)
 		 $vencedor = 1
 
    EndSelect
@@ -236,13 +238,17 @@ Func Ganhador()
 		 GUICtrlSetBkColor($gui[4],0x000000)
 		 GUICtrlSetColor($gui[$i], 0xFFFFFF)
 		 GUICtrlSetData($gui[4], "X Ganhou!")
-		 Sleep(10000)
-		 Exit
+		 Sleep(5000)
+		 $jogando = 0
+		 $vencedor = 0
+		 anima()
 	  ElseIf($vencedor = 2) Then
 		 GUICtrlSetBkColor($gui[4],0x000000)
 		 GUICtrlSetColor($gui[$i], 0xFFFFFF)
 		 GUICtrlSetData($gui[4], "O Ganhou!")
-		 Sleep(10000)
-		 Exit
+		 Sleep(5000)
+		 $jogando = 0
+		 $vencedor = 0
+		 anima()
 	  EndIf
 EndFunc
