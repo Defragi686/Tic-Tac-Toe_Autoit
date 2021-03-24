@@ -1,6 +1,7 @@
 <p align="center">
 # Tic-Tac-Toe
-
+</p>
+<p align="center">
 Um Simples jogo da velha Com interface grafica feito
 em autoit
 </p>
