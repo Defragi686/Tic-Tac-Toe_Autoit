@@ -220,12 +220,12 @@ Func Checar()
 		 GUICtrlSetBkColor($gui[0], 0x3D534E)
 		 GUICtrlSetBkColor($gui[4], 0x3D534E)
 		 GUICtrlSetBkColor($gui[8], 0x3D534E)
-		 $vencedor = 1
+		 $vencedor = 2
 	  Case $msg[2] == "O" And $msg[4] == "O" And $msg[6] == "O"
 		 GUICtrlSetBkColor($gui[2], 0x3D534E)
 		 GUICtrlSetBkColor($gui[4], 0x3D534E)
 		 GUICtrlSetBkColor($gui[6], 0x3D534E)
-		 $vencedor = 1
+		 $vencedor = 2
 
    EndSelect
    ;Funçao que verifica o vencedor
